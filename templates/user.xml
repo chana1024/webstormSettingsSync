@@ -21,7 +21,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="&lt;abbreviation&gt;" value="          &lt;el-col :span=&quot;12&quot;&gt;&#10;            &lt;el-form-item label=&quot;$var$&quot; prop=&quot;genre&quot;&gt;&#10;              &lt;el-select v-model=&quot;formData.genre&quot; placeholder=&quot;请选择下拉选择$var$&quot; clearable&gt;&#10;                &lt;el-option&#10;                  v-for=&quot;dict in $var2$&quot;&#10;                  :key=&quot;dict.dictValue&quot;&#10;                  :label=&quot;dict.dictLabel&quot;&#10;                  :value=&quot;dict.dictValue&quot;&#10;                &gt;&lt;/el-option&gt;&#10;              &lt;/el-select&gt;&#10;            &lt;/el-form-item&gt;&#10;          &lt;/el-col&gt;&#10; " toReformat="false" toShortenFQNames="true">
+  <template name="&lt;abbreviation&gt;" value="          &lt;el-col :span=&quot;12&quot;&gt;&#10;            &lt;el-form-item label=&quot;$var$&quot; prop=&quot;genre&quot;&gt;&#10;              &lt;el-select v-model=&quot;formData.genre&quot; placeholder=&quot;请选择下拉选择$var$&quot; clearable&gt;&#10;                &lt;el-option&#10;                  v-for=&quot;dict in $var2$&quot;&#10;                  :key=&quot;dict.dictValue&quot;&#10;                  :label=&quot;dict.dictLabel&quot;&#10;                  :value=&quot;dict.dictValue&quot;&#10;                &gt;&lt;/el-option&gt;&#10;              &lt;/el-select&gt;&#10;            &lt;/el-form-item&gt;&#10;          &lt;/el-col&gt;&#10; " description="" toReformat="false" toShortenFQNames="true">
     <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="var2" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
