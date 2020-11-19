@@ -45,4 +45,10 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="formitem-text" value="&lt;el-col :span=&quot;24&quot;&gt;&#10;    &lt;el-form-item label=&quot;备注&quot; prop=&quot;$var$&quot;&gt;&#10;       &lt;el-input type=&quot;textarea&quot; :rows=&quot;4&quot; v-model=&quot;formData.$var$&quot; placeholder=&quot;备注&quot; /&gt;&#10;    &lt;/el-form-item&gt;&#10;&lt;/el-col&gt;&#10;        " description="表单-text area" toReformat="false" toShortenFQNames="true">
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
