@@ -39,7 +39,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="form" value="&lt;el-form ref=&quot;form&quot; :model=&quot;formData&quot; :rules=&quot;rules&quot; label-width=&quot;120px&quot;&gt;&#10;    $var$&#10;&lt;/el-form&gt;" shortcut="SPACE" toReformat="false" toShortenFQNames="true">
+  <template name="form" value="&lt;el-form ref=&quot;form&quot; :model=&quot;formData&quot; :rules=&quot;rules&quot; label-width=&quot;120px&quot;&gt;&#10;    $var$&#10;&lt;/el-form&gt;" shortcut="SPACE" description="" toReformat="false" toShortenFQNames="true">
     <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Vue" value="true" />
@@ -124,7 +124,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="request-put" value="// 查询$title$列表&#10;export function $name$(data) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'put',&#10;    data:data &#10;  })&#10;}" toReformat="false" toShortenFQNames="true">
+  <template name="request-put" value="// 查询$title$列表&#10;export function $name$(data) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'put',&#10;    data:data &#10;  })&#10;}" description="" toReformat="false" toShortenFQNames="true">
     <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
@@ -132,7 +132,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="request-delete" value="// 删除$title$&#10;export function del$name$(id) {&#10;  return request({&#10;    url: '$url$' + id,&#10;    method: 'delete'&#10;  })&#10;}" toReformat="false" toShortenFQNames="true">
+  <template name="request-delete" value="// 删除$title$&#10;export function del$name$(id) {&#10;  return request({&#10;    url: '$url$' + id,&#10;    method: 'delete'&#10;  })&#10;}" description="" toReformat="false" toShortenFQNames="true">
     <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
