@@ -68,4 +68,18 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="request-get" value="// 查询库存初始列表&#10;export function $name$(query) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'get',&#10;    params: query&#10;  })&#10;}" description="api get请求" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="request-post" value="// 查询库存初始列表&#10;export function $name$(data) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'post',&#10;    data:data &#10;  })&#10;}" description="api  post请求" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
