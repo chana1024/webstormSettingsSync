@@ -68,14 +68,16 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="request-get" value="// 查询库存初始列表&#10;export function $name$(query) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'get',&#10;    params: query&#10;  })&#10;}" description="api get请求" toReformat="false" toShortenFQNames="true">
+  <template name="request-get" value="// 查询$title$列表&#10;export function $name$(query) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'get',&#10;    params: query&#10;  })&#10;}" description="api get请求" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="request-post" value="// 查询库存初始列表&#10;export function $name$(data) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'post',&#10;    data:data &#10;  })&#10;}" description="api  post请求" toReformat="false" toShortenFQNames="true">
+  <template name="request-post" value="// 查询$title$列表&#10;export function $name$(data) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'post',&#10;    data:data &#10;  })&#10;}" description="api  post请求" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -118,6 +120,22 @@
     </context>
   </template>
   <template name=":n" value=":null" description=":null" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="request-put" value="// 查询$title$列表&#10;export function $name$(data) {&#10;  return request({&#10;    url: '$url$',&#10;    method: 'put',&#10;    data:data &#10;  })&#10;}" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="request-delete" value="// 删除$title$&#10;export function del$name$(id) {&#10;  return request({&#10;    url: '$url$' + id,&#10;    method: 'delete'&#10;  })&#10;}" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Vue" value="true" />
     </context>
