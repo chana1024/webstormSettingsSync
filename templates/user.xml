@@ -16,7 +16,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="column-time" value="&lt;el-table-column label=&quot;$var$&quot; align=&quot;center&quot; prop=&quot;$var2$&quot; width=&quot;180&quot; &gt;&#10;    &lt;template slot-scope=&quot;scope&quot;&gt;&#10;       &lt;span&gt;{{ formatTime(scope.row.$var2$,'yyyy-mm-dd hh:mm:ss') }}&lt;/span&gt;&#10;    &lt;/template&gt;&#10;&lt;/el-table-column&gt;" description="" toReformat="false" toShortenFQNames="true">
+  <template name="column-time" value="&lt;el-table-column label=&quot;$var$&quot; align=&quot;center&quot; prop=&quot;$var2$&quot; width=&quot;180&quot; &gt;&#10;    &lt;template slot-scope=&quot;scope&quot;&gt;&#10;       &lt;span&gt;{{ formatTime(scope.row.$var2$,'yyyy-mm-dd hh:mm:ss') }}&lt;/span&gt;&#10;    &lt;/template&gt;&#10;&lt;/el-table-column&gt;" description="table-time" toReformat="false" toShortenFQNames="true">
     <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="var2" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -112,7 +112,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="column" value="&lt;el-table-column label=&quot;$title$&quot; align=&quot;center&quot; prop=&quot;$var$&quot; &gt;&#10;    &lt;template slot-scope=&quot;scope&quot;&gt;&#10;      &lt;span&gt;{{ parseTime(scope.row.$var$, '{y}-{m}-{d}') }}&lt;/span&gt;&#10;    &lt;/template&gt;&#10;&lt;/el-table-column&gt;" description="table-time" toReformat="false" toShortenFQNames="true">
+  <template name="column" value="&lt;el-table-column label=&quot;$title$&quot; align=&quot;center&quot; prop=&quot;$var$&quot; &gt; &lt;/el-table-column&gt;" description="" toReformat="false" toShortenFQNames="true">
     <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
