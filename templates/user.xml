@@ -147,4 +147,23 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="cnt" value="this.constant." description="常量调用" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="expand-table" value="&lt;el-table&#10;  ref=&quot;$tabelName$&quot;&#10;  v-loading=&quot;loading&quot; :data=&quot;$tableData$&quot;&#10;  @selection-change=&quot;handleSelectionChange&quot;&#10;  @expand-change=&quot;handelExpandChange&quot;&#10;  :row-key=&quot;getRowKeys&quot;&#10;  :expand-row-keys=&quot;expands&quot;&#10;  style=&quot;margin-top: 15px&quot;&gt;&#10;      &lt;el-table-column type=&quot;selection&quot; width=&quot;55&quot; align=&quot;center&quot; /&gt;&#10;      &lt;el-table-column type=&quot;expand&quot;&gt;&#10;        &lt;template slot-scope=&quot;scope&quot;&gt;&#10;          &lt;el-table size=&quot;mini&quot;  :data=&quot;$subtableData$&quot; border style=&quot;width: 100%&quot; highlight-current-row&gt;&#10;            &lt;el-table-column type=&quot;index&quot;&gt;&lt;/el-table-column&gt;&#10;            &lt;el-table-column label=&quot;$var$&quot; align=&quot;center&quot; prop=&quot;$var2$&quot; /&gt;&#10;          &lt;/el-table&gt;&#10;        &lt;/template&gt;&#10;      &lt;/el-table-column&gt;&#10;      &lt;el-table-column label=&quot;$var4$&quot; align=&quot;center&quot; prop=&quot;$var3$&quot; /&gt;&#10;      &lt;el-table-column label=&quot;$label4$&quot; align=&quot;center&quot; prop=&quot;$prop4$&quot; width=&quot;180&quot;&gt;&#10;        &lt;template slot-scope=&quot;scope&quot;&gt;&#10;          &lt;span&gt;{{ parseTime(scope.row.stockInoutDate,'{y}-{m}-{d}') }}&lt;/span&gt;&#10;        &lt;/template&gt;&#10;      &lt;/el-table-column&gt;&#10;&lt;/el-table&gt;&#10;&#10;&lt;pagination&#10;  v-show=&quot;total&gt;0&quot;&#10;  :total=&quot;total&quot;&#10;  :page.sync=&quot;queryParams.pageNum&quot;&#10;  :limit.sync=&quot;queryParams.pageSize&quot;&#10;  @pagination=&quot;getList&quot;&#10;/&gt;&#10;" description="展开table" toReformat="false" toShortenFQNames="true">
+    <variable name="tabelName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="tableData" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="subtableData" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var4" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var3" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="label4" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
