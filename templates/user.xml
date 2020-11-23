@@ -140,4 +140,9 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="exEditTable" value="&lt;elx-editable ref=&quot;inquiryDetailTable&quot; :data.sync=&quot;formData.inquiryDetailList&quot;&gt;&#10;     &lt;elx-editable-column label=&quot;项目代码&quot; prop=&quot;itemCode&quot; /&gt;&#10;     &lt;elx-editable-column label=&quot;项目名称&quot; prop=&quot;itemName&quot; /&gt;&#10;     &lt;elx-editable-column label=&quot;询价量&quot;&gt;&#10;         &lt;template slot-scope=&quot;scope&quot;&gt;&#10;             &lt;span&gt;{{scope.row.orderNum}}&amp;nbsp;&amp;nbsp;{{scope.row.unitName}}&lt;/span&gt;&#10;         &lt;/template&gt;&#10;     &lt;/elx-editable-column&gt;&#10;     &lt;elx-editable-column label=&quot;单价&quot; prop=&quot;price&quot; :edit-render=&quot;{name: 'ElInput'}&quot;/&gt;&#10;     &lt;elx-editable-column label=&quot;询价备注&quot; prop=&quot;remark&quot;/&gt;&#10;&lt;/elx-editable&gt;" description="可编辑table" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
