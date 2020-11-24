@@ -166,4 +166,10 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="getchd" value="this.$parent.getDataFromChild($var$);" description="获取组子组件数据" toReformat="false" toShortenFQNames="true">
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
