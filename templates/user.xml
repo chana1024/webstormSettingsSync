@@ -9,7 +9,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="column-index" value="&lt;el-table-column type=&quot;index&quot;&gt;&lt;/el-table-column&gt;" description="" toReformat="false" toShortenFQNames="true">
+  <template name="column-index" value="&lt;el-table-column label=&quot;序号&quot; type=&quot;index&quot;&gt;&lt;/el-table-column&gt;" description="" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="HTML" value="true" />
       <option name="JAVA_SCRIPT" value="true" />
