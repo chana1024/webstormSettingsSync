@@ -172,4 +172,13 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="validate-rule" value="$ruleName$:[&#10;              {requied:true,message:&quot;$message$&quot;,trigger:&quot;change&quot;},&#10;              {type:&quot;$type$&quot;,message:&quot;$message2$&quot;,trigger:&quot;change&quot;}&#10;            ]$END$ " description="表单表格校验-规则" toReformat="false" toShortenFQNames="true">
+    <variable name="ruleName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="message2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
