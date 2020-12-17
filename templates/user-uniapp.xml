@@ -14,4 +14,14 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="cm-upload-uni-view" value="&lt;view class=&quot;uni-uploader&quot;&gt;&#10;&#9;&lt;view class=&quot;uni-uploader-head&quot;&gt;&#10;&#9;&#9;&lt;view class=&quot;uni-uploader-title&quot;&gt;点击预览图片&lt;/view&gt;&#10;&#9;&#9;&lt;view class=&quot;uni-uploader-info&quot;&gt;{{ imageList.length }}/9&lt;/view&gt;&#10;&#9;&lt;/view&gt;&#10;&#9;&lt;view class=&quot;uni-uploader-body&quot;&gt;&#10;&#9;&#9;&lt;view class=&quot;uni-uploader__files&quot;&gt;&#10;&#9;&#9;&#9;&lt;block v-for=&quot;(image, index) in imageList&quot; :key=&quot;index&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;view class=&quot;uni-uploader__file&quot; style=&quot;position: relative;&quot;&gt;&#10;&#9;&#9;&#9;&#9;&#9;&lt;rf-image class=&quot;uni-uploader__img&quot; :src=&quot;image&quot;&gt;&lt;/rf-image&gt;&#10;&#9;&#9;&#9;&#9;&#9;&lt;view class=&quot;close-view&quot; @tap=&quot;close(index)&quot; :class=&quot;'bg-' + themeColor.name&quot;&gt;x&lt;/view&gt;&#10;&#9;&#9;&#9;&#9;&lt;/view&gt;&#10;&#9;&#9;&#9;&lt;/block&gt;&#10;&#9;&#9;&#9;&lt;view class=&quot;uni-uploader__input-box&quot; v-if=&quot;imageList.length &lt; 9&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;view class=&quot;uni-uploader__input&quot; @tap=&quot;uploadImage&quot;&gt;&lt;/view&gt;&#10;&#9;&#9;&#9;&lt;/view&gt;&#10;&#9;&#9;&lt;/view&gt;&#10;&#9;&lt;/view&gt;&#10;&lt;/view&gt;&#10;" description="组件-图片上传-uni-view" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="cm-upload-uni-method" value="// 打开相册选图&#10;uploadImage() {&#10;const _this = this;&#10;uni.chooseImage({&#10;count: 9, // 最多一次可以选择的图片张数&#10;sizeType: ['compressed'],&#10;sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机&#10;success: function(res) {&#10;if (_this.imageList.length + res.tempFiles.length &gt; 9) {&#10;_this.$mHelper.toast('不要贪心哦，最多只可上传9张照片');&#10;return;&#10;}&#10;_this.handleUploadFile(res.tempFilePaths);&#10;}&#10;});&#10;},&#10;// 依次上传图片&#10;handleUploadFile(data) {&#10;const _this = this;&#10;data.forEach(item =&gt; {&#10;_this.$http&#10;.upload(uploadImage, { filePath: item, name: 'file' })&#10;.then(r =&gt; {&#10;_this.imageList.push(r);&#10;});&#10;});&#10;},&#10;// 删除已选中图片&#10;close(e) {&#10;this.imageList.splice(e, 1);&#10;},&#10;" description="组件-图片上传-uni-data" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
