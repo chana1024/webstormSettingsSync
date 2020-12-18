@@ -1,0 +1,37 @@
+<templateSet group="user-uniapp">
+  <template name="cm-upload-su-basic-view" value="&lt;view&gt;&#10;&#9;&#9;&lt;view&gt;&#10;&#9;&#9;&#9;&lt;sunui-upbasic :upImgConfig=&quot;upImgBasic&quot; @onUpImg=&quot;upBasicData&quot; @onImgDel=&quot;delImgInfo&quot; ref=&quot;uImage&quot;&gt;&lt;/sunui-upbasic&gt;&#10;&#9;&#9;&#9;&lt;button type=&quot;primary&quot; @tap=&quot;getUpImgInfoBasic&quot;&gt;获取上传Basic图片信息&lt;/button&gt;&#10;&#9;&#9;&#9;&lt;button type=&quot;primary&quot; @tap=&quot;uImageTap&quot;&gt;手动上传图片&lt;/button&gt;&#10;&#9;&#9;&lt;/view&gt;&#10;&lt;/view&gt;" description="组件-图片上传-su-basic-view" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="cm-upload-su-basic-data" value="basicArr: [],&#10;// 基础版配置&#10;pImgBasic: {&#10;&#9;// 后端图片接口地址&#10;&#9;basicConfig: {&#10;&#9;&#9;url: 'https://p.dns06.net.cn/index.php?m=Api&amp;c=index&amp;a=upload'&#10;&#9;},&#10;&#9;// 是否开启提示(提醒上传图片的数量)&#10;&#9;// tips: false,&#10;&#9;// 是否开启notli(开启的话就是选择完直接上传，关闭的话当count满足数量时才上传)&#10;&#9;notli: false,&#10;&#9;// 图片数量&#10;&#9;count: 2,&#10;&#9;// 相机来源(相机-&gt;camera,相册-&gt;album,两者都有-&gt;all,默认all)&#10;&#9;sourceType: 'camera',&#10;&#9;// 是否压缩上传照片(仅小程序生效)&#10;&#9;sizeType: true,&#10;&#9;// 上传图片背景修改 &#10;&#9;upBgColor: '#E8A400',&#10;&#9;// 上传icon图标颜色修改(仅限于iconfont)&#10;&#9;upIconColor: '#fff',&#10;&#9;// 上传svg图标名称&#10;&#9;// upSvgIconName: 'icon-card',&#10;&#9;// 上传文字描述(仅限四个字)&#10;&#9;// upTextDesc: '上传证书',&#10;&#9;// 删除按钮位置(left,right,bleft,bright),默认右上角&#10;&#9;delBtnLocation: '',&#10;&#9;// 是否隐藏添加图片&#10;&#9;// isAddImage: false,&#10;&#9;// 是否隐藏删除图标&#10;&#9;// isDelIcon: false,&#10;&#9;// 删除图标定义背景颜色&#10;&#9;// delIconColor: '',&#10;&#9;// 删除图标字体颜色&#10;&#9;// delIconText: '',&#10;&#9;// 上传图标替换(+),是个http,https图片地址(https://www.playsort.cn/right.png)&#10;&#9;iconReplace: ''&#10;}&#10;" description="组件-图片上传-su-basic-data" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="cm-upload-su-basic-method" value="// 手动上传图片(适用于表单等上传) -2019/05/10增加&#10;uImageTap() {&#10;&#9;this.$refs.uImage.uploadimage(this.upImgBasic);&#10;},&#10;// 删除图片 -2019/05/12(本地图片进行删除)&#10;async delImgInfo(e) {&#10;&#9;console.log('你删除的图片地址为:', e, this.basicArr.splice(e.index, 1));&#10;},&#10;// 基础版&#10;async upBasicData(e) {&#10;&#9;console.log('===&gt;',e);&#10;&#9;// 上传图片数组&#10;&#9;let arrImg = [];&#10;&#9;for (let i = 0, len = e.length; i &lt; len; i++) {&#10;&#9;&#9;try {&#10;&#9;&#9;&#9;if (e[i].path_server != &quot;&quot;) {&#10;&#9;&#9;&#9;&#9;await arrImg.push(e[i].path_server.split(','));&#10;&#9;&#9;&#9;}&#10;&#9;&#9;} catch (err) {&#10;&#9;&#9;&#9;console.log('上传失败...');&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;// 图片信息保存到data数组&#10;&#9;this.basicArr = arrImg;&#10;&#9;// 可以根据长度来判断图片是否上传成功. 2019/4/11新增&#10;&#9;if (arrImg.length == this.upImgBasic.count) {&#10;&#9;&#9;uni.showToast({&#10;&#9;&#9;&#9;title: `上传成功`,&#10;&#9;&#9;&#9;icon: 'none'&#10;&#9;&#9;});&#10;&#9;}&#10;},&#10;// 获取上传图片basic&#10;getUpImgInfoBasic() {&#10;&#9;console.log('后端转成一维数组:', this.basicArr.join().split(','));&#10;}&#10;" description="组件-图片上传-su-basic-method" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="cm-upload-uni-view" value="&lt;view class=&quot;uni-uploader&quot;&gt;&#10;&#9;&lt;view class=&quot;uni-uploader-head&quot;&gt;&#10;&#9;&#9;&lt;view class=&quot;uni-uploader-title&quot;&gt;点击预览图片&lt;/view&gt;&#10;&#9;&#9;&lt;view class=&quot;uni-uploader-info&quot;&gt;{{ imageList.length }}/9&lt;/view&gt;&#10;&#9;&lt;/view&gt;&#10;&#9;&lt;view class=&quot;uni-uploader-body&quot;&gt;&#10;&#9;&#9;&lt;view class=&quot;uni-uploader__files&quot;&gt;&#10;&#9;&#9;&#9;&lt;block v-for=&quot;(image, index) in imageList&quot; :key=&quot;index&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;view class=&quot;uni-uploader__file&quot; style=&quot;position: relative;&quot;&gt;&#10;&#9;&#9;&#9;&#9;&#9;&lt;rf-image class=&quot;uni-uploader__img&quot; :src=&quot;image&quot;&gt;&lt;/rf-image&gt;&#10;&#9;&#9;&#9;&#9;&#9;&lt;view class=&quot;close-view&quot; @tap=&quot;close(index)&quot; :class=&quot;'bg-' + themeColor.name&quot;&gt;x&lt;/view&gt;&#10;&#9;&#9;&#9;&#9;&lt;/view&gt;&#10;&#9;&#9;&#9;&lt;/block&gt;&#10;&#9;&#9;&#9;&lt;view class=&quot;uni-uploader__input-box&quot; v-if=&quot;imageList.length &lt; 9&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;view class=&quot;uni-uploader__input&quot; @tap=&quot;uploadImage&quot;&gt;&lt;/view&gt;&#10;&#9;&#9;&#9;&lt;/view&gt;&#10;&#9;&#9;&lt;/view&gt;&#10;&#9;&lt;/view&gt;&#10;&lt;/view&gt;&#10;" description="组件-图片上传-uni-view" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="cm-upload-uni-method" value="// 打开相册选图&#10;uploadImage() {&#10;const _this = this;&#10;uni.chooseImage({&#10;count: 9, // 最多一次可以选择的图片张数&#10;sizeType: ['compressed'],&#10;sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机&#10;success: function(res) {&#10;if (_this.imageList.length + res.tempFiles.length &gt; 9) {&#10;_this.$mHelper.toast('不要贪心哦，最多只可上传9张照片');&#10;return;&#10;}&#10;_this.handleUploadFile(res.tempFilePaths);&#10;}&#10;});&#10;},&#10;// 依次上传图片&#10;handleUploadFile(data) {&#10;const _this = this;&#10;data.forEach(item =&gt; {&#10;_this.$http&#10;.upload(uploadImage, { filePath: item, name: 'file' })&#10;.then(r =&gt; {&#10;_this.imageList.push(r);&#10;});&#10;});&#10;},&#10;// 删除已选中图片&#10;close(e) {&#10;this.imageList.splice(e, 1);&#10;},&#10;" description="组件-图片上传-uni-data" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="cm-upload-su-view" value="&lt;view&gt;&#10;&#9;&lt;!-- 更多功能，请参照sunui-upimg.vue data --&gt;&#10;&#9;&lt;view class=&quot;sunui-title&quot;&gt;图片上传&lt;/view&gt;&#10;&#9;&lt;sunui-upimg @change=&quot;getImageInfo&quot; :upload_auto=&quot;auto&quot; ref=&quot;upimg&quot;&gt;&lt;/sunui-upimg&gt;&#10;&#9;&lt;button @click=&quot;upfile&quot;&gt;上传&lt;/button&gt;&#10;&lt;/view&gt;&#10;" description="组件-图片上传-su-view" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="cm-upload-su-method" value="import sunUiUpimg from '@/components/sunui-upimg/sunui-upimg.vue';&#10;export default {&#10;&#9;data() {&#10;&#9;&#9;return {&#10;&#9;&#9;&#9;auto: false&#10;&#9;&#9;}&#10;&#9;},&#10;&#9;mounted() {&#10;&#9;&#9;// 这里放置服务器预览图片链接地址&#10;&#9;&#9;this.$refs.upimg.upload_before_list = [{&#10;&#9;&#9;&#9;path: 'http://a3q.dns06.net.cn/15742420068480.png'&#10;&#9;&#9;}];&#10;&#9;},&#10;&#9;components: {&#10;&#9;&#9;'sunui-upimg': sunUiUpimg&#10;&#9;},&#10;&#9;methods: {&#10;&#9;&#9;upfile() {&#10;&#9;&#9;&#9;// upload_auto为true才可上传(手动上传)&#10;&#9;&#9;&#9;this.$refs.upimg.upload(this.auto = true);&#10;&#9;&#9;},&#10;&#9;&#9;getImageInfo(e) {&#10;&#9;&#9;&#9;// 上传图片或者删除图片返回信息&#10;&#9;&#9;&#9;console.log('返回图片信息：',e);&#10;&#9;&#9;}&#10;&#9;}&#10;}&#10;" description="组件-图片上传-su-method" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+</templateSet>
