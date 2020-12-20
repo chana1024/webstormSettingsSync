@@ -49,4 +49,11 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="uni-button" value="&lt;button&#10;&#9;class=&quot;confirm-btn&quot;&#10;&#9;:class=&quot;'bg-' + themeColor.name&quot;&#10;&#9;:disabled=&quot;btnLoading&quot;&#10;&#9;:loading=&quot;btnLoading&quot;&#10;&#9;@tap=&quot;$function$&quot;&#10;&gt;&#10;&#9;$name$&#10;&lt;/button&gt;&#10;" description="按钮" toReformat="false" toShortenFQNames="true">
+    <variable name="function" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
