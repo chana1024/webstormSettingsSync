@@ -39,7 +39,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="form" value="&lt;el-form ref=&quot;form&quot; :model=&quot;formData&quot; :rules=&quot;rules&quot; label-width=&quot;120px&quot;&gt;&#10;    $var$&#10;&lt;/el-form&gt;" shortcut="SPACE" description="" toReformat="false" toShortenFQNames="true">
+  <template name="form" value="&lt;el-form ref=&quot;form&quot; :model=&quot;formData&quot; :rules=&quot;rules&quot; label-width=&quot;120px&quot;&gt;&#10;    $var$&#10;&lt;/el-form&gt;" description="" toReformat="false" toShortenFQNames="true">
     <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Vue" value="true" />
