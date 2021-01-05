@@ -194,4 +194,10 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="method" value="$name$(){&#10;}," description="新建method" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
