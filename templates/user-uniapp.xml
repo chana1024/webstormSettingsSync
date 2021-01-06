@@ -34,4 +34,26 @@
       <option name="Vue" value="true" />
     </context>
   </template>
+  <template name="view-form-item-text" value="&lt;view class=&quot;input-item&quot;&gt;&#10;&#9;&lt;text class=&quot;tit&quot;&gt;$title$&lt;/text&gt;&#10;&#9;&lt;input&#10;&#9;&#9;type=&quot;text&quot;&#10;&#9;&#9;v-model=&quot;$name$&quot;&#10;&#9;&#9;placeholder=&quot;请输入您的$title$&quot;&#10;&#9;/&gt;&#10;&lt;/view&gt;&#10;" description="uniapp表单 文本框控件" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="page_item" value="{&#10;&#9;path: &quot;$url$&quot;,&#10;&#9;name: '$name$',&#10;&#9;requiresAuth: true, //可选配置 （是否权限路由）（我用来做登录拦截，true时没有登录便会跳转到登录页面。tabbar页面无法拦截，需要在页面中用uniapp原生跳转）&#10;&#9;meta: {&#10;&#9;&#9;title: '$title$',&#10;&#9;},&#10;&#9;style:{&#10;&#9;&#9;&quot;navigationBarTitleText&quot;: &quot;$title$&quot;,&#10;&#9;}&#10;}" description="pages 路由表中的路由" toReformat="false" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="uni-button" value="&lt;button&#10;&#9;class=&quot;confirm-btn&quot;&#10;&#9;:class=&quot;'bg-' + themeColor.name&quot;&#10;&#9;:disabled=&quot;btnLoading&quot;&#10;&#9;:loading=&quot;btnLoading&quot;&#10;&#9;@tap=&quot;$function$&quot;&#10;&gt;&#10;&#9;$name$&#10;&lt;/button&gt;&#10;" description="按钮" toReformat="false" toShortenFQNames="true">
+    <variable name="function" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
 </templateSet>
