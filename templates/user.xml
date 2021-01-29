@@ -4,7 +4,8 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="table" value="&lt;el-table v-loading=&quot;loading&quot; :data.sync=&quot;procurementList&quot; @selection-change=&quot;handleSelectionChange&quot; style=&quot;margin-top: 15px&quot;&gt;&#10;       &lt;el-table-column type=&quot;selection&quot; width=&quot;55&quot; align=&quot;center&quot; /&gt;&#10;       &lt;el-table-column label=&quot;示例&quot; align=&quot;center&quot; prop=&quot;batchcontent&quot; /&gt;&#10;       &lt;el-table-column label=&quot;时间&quot; align=&quot;center&quot; prop=&quot;createTime&quot; width=&quot;180&quot; &gt;&#10;           &lt;template slot-scope=&quot;scope&quot;&gt;&#10;             &lt;span&gt;{{ formatTime(scope.row.createTime,'yyyy-mm-dd hh:mm:ss') }}&lt;/span&gt;&#10;           &lt;/template&gt;&#10;       &lt;/el-table-column&gt;&#10;       &lt;template slot-scope=&quot;scope&quot;&gt;&#10;           &lt;el-button&#10;            size=&quot;mini&quot;&#10;            type=&quot;text&quot;&#10;            icon=&quot;el-icon-edit&quot;&#10;            @click=&quot;handleUpdate(scope.row)&quot;&#10;          &gt;修改&lt;/el-button&gt;&#10;          &lt;el-button&#10;             size=&quot;mini&quot;&#10;             type=&quot;text&quot;&#10;             icon=&quot;el-icon-delete&quot;&#10;             @click=&quot;handleDelete(scope.row)&quot;&#10;          &gt;删除&lt;/el-button&gt;&#10;      &lt;/template&gt;&#10;   &lt;/el-table-column&gt;&#10;&lt;/el-table&gt;&#10;&lt;pagination&#10;     v-show=&quot;total&gt;0&quot;&#10;     :total=&quot;total&quot;&#10;     :page.sync=&quot;queryParams.pageNum&quot;&#10;     :limit.sync=&quot;queryParams.pageSize&quot;&#10;     @pagination=&quot;getList&quot;&#10;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+  <template name="table" value="&lt;el-table v-loading=&quot;loading&quot; :data.sync=&quot;$data$&quot; @selection-change=&quot;handleSelectionChange&quot; style=&quot;margin-top: 15px&quot;&gt;&#10;       &lt;el-table-column type=&quot;selection&quot; width=&quot;55&quot; align=&quot;center&quot; /&gt;&#10;       &lt;el-table-column label=&quot;示例&quot; align=&quot;center&quot; prop=&quot;batchcontent&quot; /&gt;&#10;       &lt;el-table-column label=&quot;时间&quot; align=&quot;center&quot; prop=&quot;createTime&quot; width=&quot;180&quot; &gt;&#10;           &lt;template slot-scope=&quot;scope&quot;&gt;&#10;             &lt;span&gt;{{ formatTime(scope.row.createTime,'yyyy-mm-dd hh:mm:ss') }}&lt;/span&gt;&#10;           &lt;/template&gt;&#10;       &lt;/el-table-column&gt;&#10;       &lt;el-table-column&gt;&#10;           &lt;template slot-scope=&quot;scope&quot;&gt;&#10;               &lt;el-button&#10;                size=&quot;mini&quot;&#10;                type=&quot;text&quot;&#10;                icon=&quot;el-icon-edit&quot;&#10;                @click=&quot;handleUpdate(scope.row)&quot;&#10;              &gt;修改&lt;/el-button&gt;&#10;              &lt;el-button&#10;                 size=&quot;mini&quot;&#10;                 type=&quot;text&quot;&#10;                 icon=&quot;el-icon-delete&quot;&#10;                 @click=&quot;handleDelete(scope.row)&quot;&#10;              &gt;删除&lt;/el-button&gt;&#10;          &lt;/template&gt;&#10;       &lt;/el-table-column&gt;&#10;&lt;/el-table&gt;&#10;&lt;pagination&#10;     v-show=&quot;total&gt;0&quot;&#10;     :total=&quot;total&quot;&#10;     :page.sync=&quot;queryParams.pageNum&quot;&#10;     :limit.sync=&quot;queryParams.pageSize&quot;&#10;     @pagination=&quot;getList&quot;&#10;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Vue" value="true" />
     </context>
@@ -39,13 +40,14 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="form" value="&lt;el-form ref=&quot;form&quot; :model=&quot;formData&quot; :rules=&quot;rules&quot; label-width=&quot;120px&quot;&gt;&#10;    $var$&#10;&lt;/el-form&gt;" shortcut="SPACE" description="" toReformat="false" toShortenFQNames="true">
+  <template name="form" value="&lt;el-form ref=&quot;form&quot; :model=&quot;formData&quot; :rules=&quot;rules&quot; label-width=&quot;120px&quot;&gt;&#10;    $var$&#10;&lt;/el-form&gt;" description="" toReformat="false" toShortenFQNames="true">
     <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="formitem-text" value="&lt;el-col :span=&quot;24&quot;&gt;&#10;    &lt;el-form-item label=&quot;备注&quot; prop=&quot;$var$&quot;&gt;&#10;       &lt;el-input v-model=&quot;formData.remark&quot; type=&quot;textarea&quot; placeholder=&quot;请输入备注&quot;&#10;       :autosize=&quot;{minRows: 4, maxRows: 4}&quot; :style=&quot;{width: '100%'}&quot;&gt;&lt;/el-input&gt;&#10;    &lt;/el-form-item&gt;&#10;&lt;/el-col&gt;&#10;        " description="表单-text area" toReformat="false" toShortenFQNames="true">
+  <template name="formitem-text" value="&lt;el-col :span=&quot;24&quot;&gt;&#10;    &lt;el-form-item label=&quot;$name$&quot; prop=&quot;$var$&quot;&gt;&#10;       &lt;el-input v-model=&quot;formData.$var$&quot; type=&quot;textarea&quot; placeholder=&quot;请输入$name$&quot;&#10;       :autosize=&quot;{minRows: 4, maxRows: 4}&quot; :style=&quot;{width: '100%'}&quot;&gt;&lt;/el-input&gt;&#10;    &lt;/el-form-item&gt;&#10;&lt;/el-col&gt;&#10;        " description="表单-text area" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Vue" value="true" />
@@ -140,7 +142,7 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="exEditTable" value="&lt;elx-editable ref=&quot;$var$&quot; :data.sync=&quot;formData$var2$&quot;&gt;&#10;     &lt;elx-editable-column&gt;&#10;        &lt;elx-editable-column type=&quot;selection&quot; width=&quot;55&quot;&gt;&lt;/elx-editable-column&gt;&#10;        &lt;elx-editable-column type=&quot;index&quot; width=&quot;55&quot;&gt;&lt;/elx-editable-column&gt;&#10;        &lt;elx-editable-column label=&quot;示例&quot; prop=&quot;price&quot; :edit-render=&quot;{name: 'ElInput'}&quot;/&gt;&#10;        &lt;elx-editable-column prop=&quot;sex&quot; label=&quot;下拉&quot; :edit-render=&quot;{name: 'ElSelect', options: sexList}&quot;&gt;&lt;/elx-editable-column&gt;&#10;        &lt;elx-editable-column prop=&quot;date&quot; label=&quot;日期&quot; :edit-render=&quot;{name: 'ElDatePicker', props: {type: 'date', format: 'yyyy-MM-dd'}}&quot;&gt;&lt;/elx-editable-column&gt;&#10;        &lt;elx-editable-column prop=&quot;flag&quot; label=&quot;开关&quot; :edit-render=&quot;{name: 'ElSwitch', type: 'visible'}&quot;&gt;&#10;     &lt;/elx-editable-column&gt;&#10;&lt;/elx-editable&gt;" description="可编辑table" toReformat="false" toShortenFQNames="true">
+  <template name="exEditTable" value="&lt;elx-editable ref=&quot;$var$&quot; :data.sync=&quot;formData$var2$&quot;&gt;&#10;    &lt;elx-editable-column type=&quot;selection&quot; width=&quot;55&quot;&gt;&lt;/elx-editable-column&gt;&#10;    &lt;elx-editable-column type=&quot;index&quot; width=&quot;55&quot;&gt;&lt;/elx-editable-column&gt;&#10;    &lt;elx-editable-column label=&quot;示例&quot; prop=&quot;price&quot; :edit-render=&quot;{name: 'ElInput'}&quot;/&gt;&#10;    &lt;elx-editable-column prop=&quot;sex&quot; label=&quot;下拉&quot; :edit-render=&quot;{name: 'ElSelect', options: sexList}&quot;&gt;&lt;/elx-editable-column&gt;&#10;    &lt;elx-editable-column prop=&quot;date&quot; label=&quot;日期&quot; :edit-render=&quot;{name: 'ElDatePicker', props: {type: 'date', format: 'yyyy-MM-dd'}}&quot;&gt;&lt;/elx-editable-column&gt;&#10;    &lt;elx-editable-column prop=&quot;flag&quot; label=&quot;开关&quot; :edit-render=&quot;{name: 'ElSwitch', type: 'visible'}&quot;&gt;&lt;/elx-editable-column&gt;&#10;&lt;/elx-editable&gt;" description="可编辑table" toReformat="false" toShortenFQNames="true">
     <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="var2" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -177,6 +179,24 @@
     <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="message2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="tabs" value="&lt;el-tabs v-model=&quot;activeName&quot; @tab-click=&quot;handleClick&quot; style=&quot;padding:0px 20px&quot;&gt;&#10;   &lt;el-tab-pane label=&quot;$label$&quot; name=&quot;$name$&quot;&gt;&#10;   &lt;/el-tab-pane&gt;&#10;&lt;/el-tabs&gt;" description="tabs" toReformat="false" toShortenFQNames="true">
+    <variable name="label" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="table-button" value="&lt;el-row :gutter=&quot;10&quot; class=&quot;mb8&quot;&gt;&#10;    &lt;el-col :span=&quot;1.5&quot;&gt;&#10;      &lt;el-button&#10;        type=&quot;primary&quot;&#10;        icon=&quot;el-icon-plus&quot;&#10;        size=&quot;mini&quot;&#10;        @click=&quot;handleAdd&quot;&#10;      &gt;新增&lt;/el-button&gt;&#10;    &lt;/el-col&gt;&#10;    &lt;el-col :span=&quot;1.5&quot;&gt;&#10;      &lt;el-button&#10;        type=&quot;success&quot;&#10;        icon=&quot;el-icon-edit&quot;&#10;        size=&quot;mini&quot;&#10;        :disabled=&quot;single&quot;&#10;        @click=&quot;handleUpdate&quot;&#10;      &gt;修改&lt;/el-button&gt;&#10;    &lt;/el-col&gt;&#10;    &lt;el-col :span=&quot;1.5&quot;&gt;&#10;      &lt;el-button&#10;        type=&quot;danger&quot;&#10;        icon=&quot;el-icon-delete&quot;&#10;        size=&quot;mini&quot;&#10;        :disabled=&quot;multiple&quot;&#10;        @click=&quot;handleDelete&quot;&#10;      &gt;删除&lt;/el-button&gt;&#10;    &lt;/el-col&gt;&#10;    &lt;el-col :span=&quot;1.5&quot;&gt;&#10;      &lt;el-button&#10;        type=&quot;warning&quot;&#10;        icon=&quot;el-icon-download&quot;&#10;        size=&quot;mini&quot;&#10;        @click=&quot;handleExport&quot;&#10;      &gt;导出&lt;/el-button&gt;&#10;    &lt;/el-col&gt;&#10;&lt;/el-row&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+  <template name="method" value="$name$(){&#10;}," description="新建method" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Vue" value="true" />
     </context>
