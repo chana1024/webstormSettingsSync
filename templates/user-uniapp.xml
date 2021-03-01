@@ -56,18 +56,4 @@
       <option name="Vue" value="true" />
     </context>
   </template>
-  <template name="uni-request-list" value="// 查询列表&#10;export function list$name$(queryParam) {&#10;&#9;return http.get(&quot;$url$&quot;,queryParam)&#10;}&#10;" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="Vue" value="true" />
-    </context>
-  </template>
-  <template name="uni-request-add" value="// 新增列表&#10;export function add$name$(data) {&#10;&#9;return http.post(&quot;$url$&quot;,data)&#10;}" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="Vue" value="true" />
-    </context>
-  </template>
 </templateSet>
